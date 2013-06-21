@@ -1,0 +1,61 @@
+name: PlayerInfo
+main: com.github.walk2222.Main
+version: 1.0
+description: A simple plugin that returns information about the selected player
+database: false
+prefix: PlayerInfo
+commands:
+  playerinfo:
+    description: Returns first page of information
+    default: op
+    usage: /<command>
+    aliases: ['pi']
+    permission: playerinfo.pi
+    permission-message: "You do not have enough permission to do that!"
+  playerinfo page-two:
+    description: Returns second page of information
+    default: op
+    usage: /<command>
+    aliases: ['pi2']
+    permission: playerinfo.pi2
+    permission-message: "You do not have enough permission to do that!"
+permissions:
+  playerinfo.distance:
+    description: Returns distance from player to sender
+    default: op
+  playerinfo.health:
+    description: Returns player's health
+    default: op
+  playerinfo.hunger:
+    description: Returns player's hunger level
+    default: op
+  playerinfo.ip:
+    description: Returns player's Ip Address
+    default: op
+  playerinfo.location:
+    description: Returns player's location
+    default: op    
+  playerinfo.op:
+    description: Returns player's op status
+    default: op
+  playerinfo.world:
+    description: Returns player's world
+    default: op
+  playerinfo.gamemode:
+    description: Returns player's gamemode
+    default: op
+  playerinfo.level:
+    description: Returns player's experience points level
+    default: op
+  playerinfo.iteminhand:
+    description: Returns player's item in hand
+    default: op
+  playerinfo.flying:
+    description: Returns whether player is flying or not
+    default: op
+  playerinfo.dead:
+    description: Returns player's death status
+    default: op
+  playerinfo.direction:
+    description: Returns player's direction facing
+    default: op
