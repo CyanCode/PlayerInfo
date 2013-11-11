@@ -2,7 +2,6 @@ package com.github.walk2222;
 
 import java.io.File;
 import java.io.IOException;
-
 import org.bukkit.Bukkit;
 import org.bukkit.entity.*;
 import org.bukkit.command.Command;
@@ -13,6 +12,12 @@ public final class Main extends JavaPlugin {
 	//Enabling plugin message
 	@Override
 	public void onEnable(){
+		try {
+			Metrics metrics = new Metrics(this); metrics.start();
+		} catch (IOException e) { // Failed to submit the stats :-(
+			System.out.println("[Player Info] Error Submitting stats to McStats!");
+		}
+
 		createFiles();
 		HelpMenu.help();
 		this.saveDefaultConfig();
@@ -120,19 +125,19 @@ public final class Main extends JavaPlugin {
 						if(this.getConfig().getString("level") == "true"
 								&& player.hasPermission("playerinfo.level")){
 							InformationRecieverTwo.getlevel(target, sender);
-							
+
 						} if(this.getConfig().getString("iteminhand") == "true"
 								&& player.hasPermission("playerinfo.iteminhand")){
 							InformationRecieverTwo.getitem(target, sender);
-							
+
 						} if(this.getConfig().getString("flying") == "true"
 								&& player.hasPermission("playerinfo.flying")){
 							InformationRecieverTwo.getflying(target, sender);
-							
+
 						} if(this.getConfig().getString("dead") == "true"
 								&& player.hasPermission("playerinfo.dead")){
 							InformationRecieverTwo.getdeath(target, sender);
-							
+
 						} if(this.getConfig().getString("direction") == "true"
 								&& player.hasPermission("playerinfo.direction")){
 							InformationRecieverTwo.getdirection(target, sender);

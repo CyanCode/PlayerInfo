@@ -29,6 +29,9 @@ public class InformationRecieverTwo {
 
 		} catch (IOException e){
 			e.printStackTrace();
+			System.out.println("[PlayerInfo] File logging failure");
+			System.out.println("[PlayerInfo] Contact server Owner!");
+			System.out.println("[PlayerInfo] Out of HDD space?");
 		}
 	}
 
